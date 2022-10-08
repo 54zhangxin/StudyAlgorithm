@@ -1,4 +1,4 @@
-package sort;
+package 排序.sort;
 
 import java.util.Arrays;
 
@@ -8,7 +8,7 @@ import java.util.Arrays;
  * 利用分治的思想。先分后治
  * 分治法将问题分(divide)成一些小的问题然后递归求解，而治(conquer)的阶段则将分的阶段得到的各答案"修补"在一起，即分而治之
  * 归并排序是稳定排序，它也是一种十分高效的排序，能利用完全二叉树特性的排序一般性能都不会太差。
- * java中Arrays.sort()采用了一种名为TimSort的排序算法，就是归并排序的优化版本。从上文的图中可看出，
+ * java中Arrays.排序.sort()采用了一种名为TimSort的排序算法，就是归并排序的优化版本。从上文的图中可看出，
  * 每次合并操作的平均时间复杂度为O(n)，而完全二叉树的深度为|log2n|。总的平均时间复杂度为O(nlogn)。
  * 而且，归并排序的最好，最坏，平均时间复杂度均为O(nlogn)。
  */

@@ -1,4 +1,4 @@
-package sort;
+package 排序.sort;
 
 import java.util.Arrays;
 
@@ -7,17 +7,18 @@ import java.util.Arrays;
  * （其实选择第几个并没有关系）。接下来我们需要把这个待排序的数列中小于基准数的元素移动到待排序的数列的左边，
  * 把大于基准数的元素移动到待排序的数列的右边。这时，左右两个分区的元素就相对有序了；接着把两个分区的元素分别按照上
  * 面两种方法继续对每个分区找出基准数，然后移动，直到各个分区只有一个数时为止。
- *
- *
+ * <p>
+ * <p>
  * 分治思想
  */
 public class 快排 {
 
     public static void main(String[] args) {
-        quickSort(new int[]{39,28,55,87,66,3,17,39});
+        quickSort(new int[]{39, 28, 55, 87, 66, 3, 17, 39});
     }
+
     public static void quickSort(int[] arr) {
-        quickSort(arr,0,arr.length-1);
+        quickSort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr));
     }
 
@@ -41,23 +42,24 @@ public class 快排 {
     //当left和right相等将枢轴元素赋值在此。
     //最后返回中间元素的索引。
 
-//28,55,87,66,3,17
+    //28,55,87,66,3,17
+    // 通过轴点 把数组分成左小右大的2个空间 然后返回中间值 进行下一次的分割
     public static int partition(int[] arr, int left, int right) {
         int pivot = arr[left];
         while (left < right) {
-            System.out.println(" arr[left]:   "+arr[left]+" arr[right]:  "+arr[right]);
+            System.out.println(" arr[left]:   " + arr[left] + " arr[right]:  " + arr[right]);
             while (left < right && arr[right] >= pivot) {//先从右边扫描，大于枢轴值就继续扫描
-                System.out.println("right pre :   "+right+"   "+arr[right]+"   "+pivot);
+                System.out.println("right pre :   " + right + "   " + arr[right] + "   " + pivot);
                 right--;
-                System.out.println("right tail :   "+right+"   "+arr[right]+"   "+pivot);
+                System.out.println("right tail :   " + right + "   " + arr[right] + "   " + pivot);
             }
             System.out.println("---------");
             arr[left] = arr[right];
-            System.out.println("一次调整 arr[left]:   "+arr[left]+" arr[right]:  "+arr[right]);
+            System.out.println("一次调整 arr[left]:   " + arr[left] + " arr[right]:  " + arr[right]);
             while (left < right && arr[left] <= pivot) {
-                System.out.println("left pre :   "+left+"   "+arr[left]+"   "+pivot);
+                System.out.println("left pre :   " + left + "   " + arr[left] + "   " + pivot);
                 left++;
-                System.out.println("left tail :   "+left+"   "+arr[left]+"   "+pivot);
+                System.out.println("left tail :   " + left + "   " + arr[left] + "   " + pivot);
             }
             arr[right] = arr[left];
         }

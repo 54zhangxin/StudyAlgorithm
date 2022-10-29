@@ -22,6 +22,11 @@ public class 二叉树的中序遍历 {
         return res;
     }
 
+    /**
+     * 用递归实现遍历
+     * @param res
+     * @param root
+     */
     void dfs(List<Integer> res, TreeNode root) {
         if(root==null) {
             return;
@@ -33,7 +38,11 @@ public class 二叉树的中序遍历 {
     }
 
 
-    // 以下为迭代实现
+    /**
+     * 用迭代实现  借用额外空间 栈
+     * @param root
+     * @return
+     */
     public List<Integer> inorderTraversal2(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
         Stack<TreeNode> stack = new Stack<TreeNode>();
@@ -53,5 +62,19 @@ public class 二叉树的中序遍历 {
         }
         return res;
     }
-
+    /**
+     * 递归解释：
+     *      1
+     *   2    3
+     * 4  5   6  7
+     *
+     * 124依次进栈
+     *   |   |
+     *   | 4 |
+     *   | 2 |
+     *   | 1 |
+     *   ____  此时root为空 开始弹出栈内第一个节点 即4出栈 4的右节点还是空 继续出栈 2出栈 root 不为空 进栈 此时root 又为空了 有需要弹出
+     *
+     *
+     */
 }

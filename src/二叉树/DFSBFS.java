@@ -1,3 +1,5 @@
+package 二叉树;
+
 import java.util.LinkedList;
 import java.util.Stack;
 
@@ -6,7 +8,6 @@ import java.util.Stack;
  * https://www.cnblogs.com/bruce1992/p/15135876.html
  */
 public class DFSBFS {
-
 
     class Node{
         char data;

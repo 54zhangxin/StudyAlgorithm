@@ -1,6 +1,7 @@
 package 堆;
 
 /**
+ * https://leetcode.cn/problems/kth-largest-element-in-an-array/
  * 给定整数数组 nums 和整数 k，请返回数组中第 k 个最大的元素。
  * 请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
  * 此题构建大根堆排序
@@ -11,8 +12,10 @@ package 堆;
 public class 数组中的第K个最大元素 {
     public int findKthLargest(int[] nums, int k) {
         int heapSize = nums.length;
+        // 构建大顶堆
         buildMaxHeap(nums, heapSize);
         //建堆完毕后，nums【0】为最大元素。逐个删除堆顶元素，直到删除了k-1个。
+        //删除 k-1 次对顶元素
         for (int i = nums.length - 1; i >= nums.length - k + 1; --i) {
             //先将堆的最后一个元素与堆顶元素交换，由于此时堆的性质被破坏，需对此时的根节点进行向下调整操作。
             swap(nums, 0, i);
@@ -22,8 +25,9 @@ public class 数组中的第K个最大元素 {
         }
         return nums[0];
     }
+    //构建大顶堆
     public void buildMaxHeap(int[] a, int heapSize) {
-        //从最后一个父节点位置开始调整每一个节点的子树。数组长度为heasize，因此最后一个节点的位置为heapsize-1，所以父节点的位置为heapsize-1-1/2。
+        //从最后一个父节点位置开始调整每一个节点的子树。数组长度为heapsize，因此最后一个节点的位置为heapsize-1，所以父节点的位置为heapsize-1-1/2。
         for (int i = (heapSize-2)/ 2; i >= 0; --i) {
             maxHeapify(a, i, heapSize);
         }

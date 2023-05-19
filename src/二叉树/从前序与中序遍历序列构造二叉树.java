@@ -3,6 +3,12 @@ package 二叉树;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+ * medium
+ * 给定两个整数数组 preorder 和 inorder ，其中preorder 是二叉树的先序遍历， inorder是同一棵树的中序遍历，请构造二叉树并返回其根节点。
+ * 分治法，根据前序遍历得到根节点，根据中序遍历 把左子树 和右子树切开 然后递归 最终生成一棵树
+ */
 public class 从前序与中序遍历序列构造二叉树 {
     private Map<Integer, Integer> indexMap;
     public TreeNode myBuildTree(int[] preorder, int[] inorder, int preorder_left, int preorder_right, int inorder_left, int inorder_right) {

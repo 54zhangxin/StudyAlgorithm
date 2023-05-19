@@ -11,12 +11,16 @@ public class 翻转链表 {
         }
 
         ListNode prev = null;
-        ListNode curr = head;
-        while (curr != null) {
-            ListNode next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
+        ListNode cur = head;
+        while (cur != null) {
+            //把当前节点的next 节点 存着
+            ListNode next = cur.next;
+            //把当前节点的next 指向前一位节点
+            cur.next = prev;
+            //默认的前节点向后移动
+            prev = cur;
+            //当前节点 也想后移动
+            cur = next;
         }
 
         return prev;

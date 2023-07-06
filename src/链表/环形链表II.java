@@ -9,13 +9,13 @@ package 链表;
 public class 环形链表II {
 
     /**
-     *
+     * 建议直接多看链接中的图
      * 作者：jyd
      * 链接：https://leetcode.cn/problems/linked-list-cycle-ii/solution/linked-list-cycle-ii-kuai-man-zhi-zhen-shuang-zhi-/
      */
     /**
      * 原理：首先初始化快指针 fast = head.next.next 和 slow = head.next，
-     *     此时快指针走的路长为2, m慢指针走的路长为1，之后令快指针每次走两步，
+     *     此时快指针走的路长为2, 慢指针走的路长为1，之后令快指针每次走两步，
      *     慢指针每次走一步，这样快指针走的路长始终是慢指针走的路长的两倍，
      *     若不存在环，直接返回None，
      *     若存在环，则 fast 与 slow 肯定会在若干步之后相遇；

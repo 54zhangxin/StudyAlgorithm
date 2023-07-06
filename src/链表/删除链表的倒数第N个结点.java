@@ -1,12 +1,14 @@
 package 链表;
 
 /**
+ * https://leetcode.cn/problems/remove-nth-node-from-end-of-list/
  * 给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。
  * 中等
  * 快慢指针
  * 解题思路
  * 就是用快慢指针，快指针quickNode先走n步，然后慢指针slowNode从链表头部出发，每次quickNode和slowNode都只走一步，
- * 直到快指针quickNode走到最后一步，此时slowNode与quickNode之间相差n步，其实是此时slowNode是倒数第n+1个节点，
+ * 添加一个预指针指向表头
+ * 直到快指针quickNode走到最后一步，此时 slowNode与 quickNode 之间相差n步，其实是此时slowNode是倒数第n+1个节点，
  * 也就是要删除的节点的前一个节点，直接将slowNode.next = slowNode.next.next;，就可以将节点删除。
  *
  * 但是需要考虑到如果删除的是头结点，此时会比较麻烦，严格意义上，m个节点，头结点与最后一个节点之间只存在m-1个节点的间隔，

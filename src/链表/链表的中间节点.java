@@ -1,7 +1,8 @@
 package 链表;
 
 /**
- * leetcode  874
+ * https://leetcode.cn/problems/middle-of-the-linked-list/
+ * leetcode  876
  * 快慢指针
  * 快指针走2步
  *

@@ -40,22 +40,18 @@ public class 翻转链表 {
     /**
      * https://leetcode.cn/problems/reverse-linked-list/solution/dong-hua-yan-shi-206-fan-zhuan-lian-biao-by-user74/
      * 递归解法 看图就容易理解了
-     *
-     * reverseList: head=1
-     *     reverseList: head=2
-     * 	       reverseList: head=3
-     * 		       reverseList:head=4
-     * 			       reverseList:head=5
-     * 					     终止返回
-     * 				   cur = 5
-     * 			   4.next.next->4，即5->4
-     * 			       cur=5
-     * 		   3.next.next->3，即4->3
-     * 		         cur = 5
+     * 1 -》 2 -》 3 -》 4 -》5 -》 null
+     *第一次进入方法 不满足条件 开始递归
+     *   head = 1 即 reverseList(1.next)      reverseList(2)
+     *      head = 2 即 reverseList(2.next)    reverseList(3)
+     * 	        head = 3 即 reverseList(3.next)  reverseList(4)
+     * 		       head = 4 即 reverseList(4.next)  reverseList(5)
+     * 	5.next == null 开始终止递归 此时 head = 4 返回的 cur = 5
+     * 		       4.next.next = 4   此时 5-》4 4.next = null cur 没变
+     * 		    3.next.next -> 3，即 4->3
      * 	    2.next.next->2，即3->2
      * 	          cur = 5
-     * 1.next.next->1，即2->1
-     *
+     *   1.next.next->1，即2->1
      * 	最后返回cur
      */
     public ListNode reverseList2(ListNode head) {

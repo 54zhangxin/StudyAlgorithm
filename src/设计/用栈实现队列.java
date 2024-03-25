@@ -16,30 +16,30 @@ import java.util.Deque;
  */
 public class 用栈实现队列 {
     //Deque也可以作为LIFO(后进先出)堆栈,此接口优于传统的Stack类使用。
-    Deque<Integer> inStack ;
+    Deque<Integer> inStack;
     Deque<Integer> outStack;
 
-    public 用栈实现队列(){
+    public 用栈实现队列() {
         inStack = new ArrayDeque<>();
         outStack = new ArrayDeque<>();
     }
 
-    public void push(int x){
+    public void push(int x) {
         inStack.push(x);
     }
 
-    public int pop(){
+    public int pop() {
         if (outStack.isEmpty()) {
             in2out();
         }
-        return  outStack.pop();
+        return outStack.pop();
     }
 
     public int peek() {
         if (outStack.isEmpty()) {
             in2out();
         }
-        return  outStack.peek();
+        return outStack.peek();
 
     }
 

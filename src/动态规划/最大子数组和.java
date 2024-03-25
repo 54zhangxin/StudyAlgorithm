@@ -5,7 +5,6 @@ package 动态规划;
  * medium   求最值 基本上用动态规划解
  * 又名：最大子序和
  * 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
- *
  */
 public class 最大子数组和 {
     // 详细解析参见：
@@ -29,25 +28,25 @@ public class 最大子数组和 {
         return res;
     }
 
+
+    // 这个动态规划 讲得好
+    // https://leetcode.cn/problems/maximum-subarray/solution/dong-tai-gui-hua-fen-zhi-fa-python-dai-ma-java-dai/
+
     //https://leetcode.cn/problems/maximum-subarray/solution/hua-jie-suan-fa-53-zui-da-zi-xu-he-by-guanpengchn/
     // 看图就懂了。。
-        public int maxSubArray2(int[] nums) {
-            int ans = nums[0];
-            int sum = 0;
-            for(int num: nums) {
-                if(sum > 0) {
-                    sum += num;
-                } else {
-                    sum = num;
-                }
-                ans = Math.max(ans, sum);
+    public int maxSubArray2(int[] nums) {
+        int ans = nums[0];
+        int sum = 0;
+        for (int num : nums) {
+            if (sum > 0) {
+                sum += num;
+            } else {
+                sum = num;
             }
-            return ans;
+            ans = Math.max(ans, sum);
         }
-
-
-
-
+        return ans;
+    }
 
 
 }

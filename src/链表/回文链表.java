@@ -12,10 +12,7 @@ public class 回文链表 {
     //就是用一个快慢指针，找到链表的中位数节点，然后对后半部分链表进行反转，然后分别从原链表头部和尾部开始遍历判断。
     //寻找回文串的核心思想是从中心向两端扩展：
     boolean isPalindrome(ListNode head) {
-        /**
-         * 这里是让slow 慢指针走到中点
-         *
-         */
+        // 这里是让slow 慢指针走到中点
         ListNode slow, fast;
         slow = fast = head;
         while (fast != null && fast.next != null) {
@@ -24,15 +21,21 @@ public class 回文链表 {
         }
         /**
          * 由于节点总数存在奇数，后续要从slow 指针翻转链表要针对性往下走一步
-         *
-         *   1    2    4    5     6
+         *   1    2    3    4    5
          *  s,f
          *        s    f
-         *             s          f
+         *             s         f
          *  这时候的慢指针 s 是中点  为了翻转链表 向下走一位 适配节点总数为偶数的情况
+         *
+         *  1    2    3     4    5     6
+         * s,f
+         *       s    f
+         *            s          f
+         *                  s                f
          */
-        if (fast != null)
+        if (fast != null){
             slow = slow.next;
+        }
 
         ListNode left = head;
         ListNode right = reverse(slow);

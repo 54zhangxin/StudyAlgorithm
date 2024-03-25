@@ -2,7 +2,7 @@ package 二叉树;
 /**
  * https://leetcode.cn/problems/merge-two-binary-trees/
  * easy
- *  合并的规则是：如果两个节点重叠，那么将这两个节点的值相加作为合并后节点的新值；否则，不为 null 的节点将直接作为新二叉树的节点。
+ * 合并的规则是：如果两个节点重叠，那么将这两个节点的值相加作为合并后节点的新值；否则，不为 null 的节点将直接作为新二叉树的节点。
  */
 public class 合并二叉树 {
 

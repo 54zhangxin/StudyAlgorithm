@@ -1,10 +1,14 @@
 package 数组;
 
 /**
+ * <a href="https://leetcode.cn/problems/median-of-two-sorted-arrays/">
+ * hard
  * 给定两个大小分别为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出并返回这两个正序数组的 中位数 。
  * 算法的时间复杂度应该为 O(log (m+n)) 。
+ * </a>
  */
 public class 寻找两个正序数组的中位数 {
+//    https://leetcode.cn/problems/median-of-two-sorted-arrays/solution/xun-zhao-liang-ge-you-xu-shu-zu-de-zhong-wei-s-114/411176
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int leftLength = nums1.length;
         int rightLength = nums2.length;

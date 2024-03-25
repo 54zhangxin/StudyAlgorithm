@@ -7,6 +7,11 @@ package 字符串;
  * 动态规划
  */
 public class 最长回文子串 {
+    /**
+     * 动态规划
+     * @param s
+     * @return
+     */
     public String longestPalindrome(String s) {
         int len = s.length();
         if (len < 2) {

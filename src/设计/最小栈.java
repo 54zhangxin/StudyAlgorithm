@@ -9,8 +9,6 @@ import java.util.Stack;
  * pop()—— 删除栈顶的元素。
  * top()—— 获取栈顶元素。
  * getMin() —— 检索栈中的最小元素。
- * <p>
- * <p>
  * 容易
  */
 public class 最小栈 {

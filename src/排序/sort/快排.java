@@ -18,6 +18,8 @@ public class 快排 {
     }
 
     public static void quickSort(int[] arr) {
+        System.out.println(Arrays.toString(arr));
+
         quickSort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr));
     }

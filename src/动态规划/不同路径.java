@@ -1,4 +1,5 @@
 package 动态规划;
+import java.util.Arrays;
 
 /**
  * https://leetcode.cn/problems/unique-paths/
@@ -9,7 +10,11 @@ package 动态规划;
  */
 public class 不同路径 {
     /**
+     *  a   n  c
+     *  j   d  e
+     *  w   k  w
      * 定义dp 数组 dp[i][j]  表示到达该点的路径和  可以由dp[i-1][j]加上dp[i][j-1]求得
+     * dp[2][2] 只能由上边和左边的走过来
      * 因为只能通过向下和向右两种走法。
      */
 
@@ -32,6 +37,27 @@ public class 不同路径 {
             }
         }
         return dp[m - 1][n - 1];
+    }
+
+
+    // 这解法2 空间优化，比较绕一点
+    public static int uniquePaths(int m, int n) {
+        //一维空间，其大小为 n
+        int[] dp = new int[n];
+        Arrays.fill(dp, 1);
+        for(int i = 1; i < m; ++i) {
+            for(int j = 1; j < n; ++j) {
+                //等式右边的 dp[j]是上一次计算后的，加上左边的dp[j-1]即为当前结果
+                dp[j] = dp[j] + dp[j - 1];
+                int x= 0;
+            }
+        }
+        return dp[n - 1];
+    }
+
+    public static void main(String[] args) {
+        uniquePaths(3,3);
+
     }
 
 }

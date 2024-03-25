@@ -4,7 +4,6 @@ package 链表;
  * 题目详情：https://leetcode-cn.com/problems/add-two-numbers/
  * 对于链表问题，返回结果为头结点时，通常需要先初始化一个预先指针 pre，该指针的下一个节点指向真正的头结点head。
  * 使用预先指针的目的在于链表初始化时无可用节点值，而且链表构造过程需要指针移动，进而会导致头指针丢失，无法返回结果。
- *
  * 中等
  * 题目：
  * 输入：l1 = [2,4,3], l2 = [5,6,4]
@@ -24,7 +23,7 @@ public class 两数相加 {
             int y = l2 == null ? 0 : l2.val;
             int sum = x + y + carry;
 
-            carry = sum / 10;//获取进位值；
+            carry = sum / 10;//获取进位值
             sum = sum % 10;
             cur.next = new ListNode(sum);
             cur = cur.next;
@@ -36,7 +35,8 @@ public class 两数相加 {
             }
         }
 
-        if(carry == 1) {//此时为循环结束
+        //此时创建新的node节点 因为题意就是相加进位往后并不是正常的数字相加！
+        if(carry == 1) {
             cur.next = new ListNode(carry);
         }
 
